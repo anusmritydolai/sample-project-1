@@ -1,2 +1,16 @@
-<p>dachboard works!</p>
-<a routerLink='dashboard'>click</a>
+
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened class="drawer"style="justify-content: space-around;">
+            <div class="flex-row center">
+                <mat-icon>reorder</mat-icon>
+                <h1 style="font-weight: bold; margin: 0 !important;">sidebar</h1>
+            </div>
+            <div class="flex-row center margin" style="justify-content: space-evenly;">
+                <mat-icon>account_circle</mat-icon>
+                <h1 style="font-weight: bold; margin: 0 !important;">login</h1>
+            </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <a routerLink='dashboard'>clients</a>
+    </mat-drawer-content>
+</mat-drawer-container>

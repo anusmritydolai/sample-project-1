@@ -37,3 +37,10 @@ $angular-project-theme: mat-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.flex-row, .flex-col { display: flex; }
+.flex-row { flex-direction: row; }
+.center { justify-content: center; align-items: center; }
+.margin { margin: 0 8px; }
+
+// @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'
