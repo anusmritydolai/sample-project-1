@@ -1,2 +1,31 @@
-<p>login works!</p>
-<a routerLink="/dashboard">click</a>
+<div style="width: 30%;"></div>
+<div style="background-color: #2196F3; width: 70%;"></div>
+
+<mat-card class="login-card">
+   <h1>login</h1>
+   <form [formGroup]="form" *ngIf="form" style="width: 100%;">
+      <mat-form-field appearance="outline" fill>
+         <mat-label>Email</mat-label>
+            <mat-icon matPrefix>email</mat-icon>
+            <input matInput type="email" formControlName="email" placeholder="email" autocomplete="off" required>
+            <mat-error *ngIf="form.get('email').hasError('required')">ⓘ Please enter your email id – it's
+               required
+            </mat-error>
+            <mat-error *ngIf="form.get('email').hasError('email') && !form.get('email').hasError('required')">ⓘ
+               Please enter a valid email address – it's invalid
+            </mat-error>
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline">
+         <mat-label>Password</mat-label>
+            <mat-icon matPrefix>lock</mat-icon>
+            <input matInput  [type]="hide ? 'password' : 'text'" autocomplete="off" formControlName="password"
+            placeholder="Password" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        <mat-error *ngIf="form.get('password').hasError('required')">ⓘ Please enter your password – it's
+            required</mat-error>
+      </mat-form-field>
+   </form>
+</mat-card>

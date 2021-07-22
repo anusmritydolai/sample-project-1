@@ -1,12 +1,30 @@
-<div class="sidenav">
-    <div class="logo">
-        <a href="/" class="logo-text">
-        <div class="log-image">
-            <img src="../../assets/image/logo.png" alt="No Image"/>
+<div class="sidenav flex-col">
+    <div class="flex-row center">
+        <mat-icon>reorder</mat-icon>
+        <h1 style="font-weight: 400; margin: 0 !important;">sidebar</h1>
+    </div>
+    <div>
+        <div class="flex-col center margin" style="justify-content: space-evenly; cursor: pointer;" routerLink="/auth/login">
+            <mat-icon>login</mat-icon>
+            <h3 style="font-weight: 400; margin: 0 !important;" >LOGIN
+
+            </h3>
+
         </div>
-         </a>
-         <a href="/" class="logo-text">
-            ghb
-         </a>
+        <div class="flex-col center margin" style="justify-content: space-evenly; cursor: pointer;" routerLink="/company">
+            <mat-icon>work</mat-icon>
+            <h3 style="font-weight: 400; margin: 0 !important;">COMPANY</h3>
+        </div>
+        <div class="flex-col center margin" style="justify-content: space-evenly; cursor: pointer;" routerLink="/clients">
+            <mat-icon>account_circle</mat-icon>
+            <h3 style="font-weight: 400; margin: 0 !important;">CLIENTS</h3>
+        </div>
+        <div class="flex-col center margin" style="justify-content: space-evenly; cursor: pointer;" routerLink="/auth/signup">
+            <mat-icon>logout</mat-icon>
+            <h3 style="font-weight: 400; margin: 0 !important;">SIGN UP</h3>
+        </div>
+    </div>
+    <div class="flex-col center margin" style="justify-content: space-evenly;">
+        <P style="font-weight: 400; margin: 0 !important;">creator: anu</P>
     </div>
 </div>
