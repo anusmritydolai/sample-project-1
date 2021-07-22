@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AppService } from './app.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { OthersService } from './services/others.service';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatSnackBarModule
   ],
   providers: [
-    AppService
+    AppService, OthersService
   ],
   bootstrap: [AppComponent]
 })

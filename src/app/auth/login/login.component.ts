@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AppService } from 'src/app/app.service';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
   public hide: boolean = true;
 
 
-  constructor(private authService: AuthService, private appService: AppService) { }
+  constructor(private authService: AuthService, private appService: AppService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -26,8 +27,8 @@ export class LoginComponent implements OnInit {
   public onLoginClick():void {
     if(this.form.valid) {
       this.authService.login(this.form.value.email, this.form.value.password).subscribe(data => {
-        console.log(data);
-        
+        localStorage.setItem('user_info', JSON.stringify(data));
+        this.router.navigate(['/dashboard']);
       }, error => {
         this.appService.openSnackBar(error.error.reason);
       })  
