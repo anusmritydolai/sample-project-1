@@ -7,7 +7,7 @@
       <mat-form-field appearance="outline" fill>
          <mat-label>Email</mat-label>
             <mat-icon matPrefix>email</mat-icon>
-            <input matInput type="email" formControlName="email" placeholder="email" autocomplete="off" required>
+            <input matInput type="email" formControlName="email" placeholder="email" autocomplete="on" required>
             <mat-error *ngIf="form.get('email').hasError('required')">ⓘ Please enter your email id – it's
                required
             </mat-error>
@@ -19,13 +19,26 @@
       <mat-form-field appearance="outline">
          <mat-label>Password</mat-label>
             <mat-icon matPrefix>lock</mat-icon>
-            <input matInput  [type]="hide ? 'password' : 'text'" autocomplete="off" formControlName="password"
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" autocomplete="on"
             placeholder="Password" required>
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
         <mat-error *ngIf="form.get('password').hasError('required')">ⓘ Please enter your password – it's
             required</mat-error>
+         <mat-error *ngIf="form.get('password').hasError('minlength') && !form.get('password').hasError('required')">
+            ⓘ It's too short
+         </mat-error>
+         <mat-error *ngIf="form.get('password').hasError('maxlength') && !form.get('password').hasError('minlength')">
+            ⓘ It's too long
+         </mat-error>
       </mat-form-field>
+
+      <button style="width: 220px; margin-bottom: 8px; margin-top: 8px; background-color:#173b67; color: white;" mat-raised-button (click)="onLoginClick()">LOGIN</button>
+      <div>
+         <button mat-button style="margin-top: 6px; margin-bottom: 4px;" routerLink='/auth/signup'>Not a member? <span style="color: rgb(51, 183, 228);">Sign up now!</span></button>
+         <button mat-button routerLink='/auth/reset-password'>Forgot Passowrd?</button>
+     </div>
+ 
    </form>
 </mat-card>

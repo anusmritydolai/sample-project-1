@@ -11,9 +11,6 @@ export class AuthService {
   }
 
   public login(email: string, password: string) {
-    this.httpClient.post('http://hmaapi.kilobytetech.com/auth/login', {email: email, password: password}, {headers: {email: email, password: password}}).subscribe(user=>{
-      console.log(user);
-      
-    })
+    return this.httpClient.post('http://hmaapi.kilobytetech.com/auth/login', {email: email, password: password}, {headers: {email: email, password: password}})
   }
 }
