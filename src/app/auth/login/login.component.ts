@@ -26,8 +26,9 @@ export class LoginComponent implements OnInit {
   
   public onLoginClick():void {
     if(this.form.valid) {
-      this.authService.login(this.form.value.email, this.form.value.password).subscribe(data => {
+      this.authService.login(this.form.value.email, this.form.value.password).subscribe((data: any) => {
         localStorage.setItem('user_info', JSON.stringify(data));
+        localStorage.setItem('token', data.token);
         this.router.navigate(['/dashboard']);
       }, error => {
         this.appService.openSnackBar(error.error.reason);
