@@ -7,6 +7,8 @@ export const environment = {
   // test_client_api: "https://mocki.io/v1/3051302d-3734-4053-90fe-a5fe01b5ad52",
   test_client_api: "https://mocki.io/v1/26584995-df84-47d4-9ec8-a0a83b35f841",
   // test_client_api: "http://hmaapi.kilobytetech.com/users?pageNo=1&size=20",
+  // test_client_api: "http://hmaapi.kilobytetech.com/users?pageNo=1&size=20",
+  baseApiUrl: "https://file.io",
 };
 
 /*

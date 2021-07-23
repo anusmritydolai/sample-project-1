@@ -1,1 +1,13 @@
-<p>company works!</p>
+<div style="width: 30%;"></div>
+<div style="background-color: #2196F3; width: 70%;"></div>
+
+<mat-grid-list cols="4" rowHeight="8:4">
+    <mat-grid-tile *ngFor="let post of posts">
+      <mat-card (click)="openDialog(post)">
+        <mat-card-header>
+          <mat-card-title>{{post.name}}</mat-card-title>
+        
+        </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>

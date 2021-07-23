@@ -1,0 +1,18 @@
+
+    <!--  -->
+
+    <h1 mat-dialog-title>Upload Document</h1>
+    <img [src]="picture" alt="no picture" height="256px" *ngIf="picture" />
+    <div mat-dialog-content>
+        <input class="form-control" type="file"
+            (change)="onChange($event)">
+
+        </div>
+    <div mat-dialog-actions style="justify-content: space-between;">
+        <button mat-button mat-dialog-close>Close</button>
+        <button mat-button color="primary" (click)="onUpload()"
+            class="btn btn-success">
+            Upload
+        </button>
+    </div>
+    

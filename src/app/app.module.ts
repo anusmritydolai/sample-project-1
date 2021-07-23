@@ -13,7 +13,7 @@ import { HttpAuthHeaderInterceptor, HttpErrorInterceptor } from './interceptor';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

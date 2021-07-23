@@ -4,8 +4,9 @@ import { DachboardComponent } from './dachboard/dachboard.component';
 
 const routes: Routes = [
   { path: '', component: DachboardComponent, children: [
-    { path: '', redirectTo: '/clients' },
     { path: 'clients', loadChildren: () => import('../clients/clients.module').then(m=>m.ClientsModule) },
+    { path: 'company', loadChildren: () => import('../company/company.module').then(m=>m.CompanyModule) },
+
   ] },
 ];
 
