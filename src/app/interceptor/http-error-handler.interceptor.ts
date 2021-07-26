@@ -86,9 +86,9 @@ export class HttpErrorInterceptor implements HttpInterceptor {
 				//this._router.navigate(['/internal-server-error']);
 				break; */
 			case 401:
-				localStorage.removeItem('admin_info');
-				localStorage.removeItem('admin_token');
-				location.reload();
+				localStorage.removeItem('token');
+				localStorage.removeItem('user_info');
+				// location.reload();
 				break;
 			default:
 				console.log('Sorry! something went wrong.', 'Error!');
