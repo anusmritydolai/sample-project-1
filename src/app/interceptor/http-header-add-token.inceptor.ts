@@ -22,12 +22,7 @@ export class HttpAuthHeaderInterceptor implements HttpInterceptor {
 		/**
 		 * Setting header's config throught interceptor
 		 */
-		const headersConfig: any = {
-			// 'X-Content-Type-Options': 'nosniff'
-			/* 'Content-Type':
-				contentType !== undefined ? contentType : 'application/json',
-			'Accept': 'application/json' */
-		};
+		const headersConfig: any = {};
 
 		/**
 		 * If token found setting it in header

@@ -6,16 +6,11 @@ import {
 	HttpErrorResponse
 } from '@angular/common/http';
 import {
-	delay,
-	retry,
-	timeout,
-	retryWhen,
-	concatMap,
 	catchError
 } from 'rxjs/operators';
 //import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { throwError, Observable, of } from 'rxjs';
+import { throwError, Observable } from 'rxjs';
 
 @Injectable()
 export class HttpErrorInterceptor implements HttpInterceptor {
@@ -31,44 +26,19 @@ export class HttpErrorInterceptor implements HttpInterceptor {
 		 * *Interceptor for handling error
 		 *
 		 * @date 04 Apr 2021
-		 * @developer Rahul Kundu
+		 * @developer Anusmrity Dolai
 		 */
 
 		// catching error without retry
 		return next
 			.handle(request)
 			.pipe(catchError((error) => this.errorHandler(error)));
-
-		// with retry operator
-		// return next.handle(request).pipe(
-		//     timeout(appSettings.ajaxTimeout),
-		//     retry(1),
-		//     catchError((error) => this.errorHandler(error))
-		// );
-
-		// with retryWhen, delay, concatMap operator
-		// return next.handle(request).pipe(
-		// 	timeout(appSettings.ajaxTimeout),
-		// 	retryWhen((errors) => {
-		// 		return errors.pipe(
-		// 			concatMap((error, count) => {
-		// 				if (count < retryCount) {
-		// 					return of(error);
-		// 				}
-		// 				return throwError(error);
-		// 			}),
-		// 			delay(retryDelay)
-		// 		);
-		// 	}),
-		// 	catchError((error) => this.errorHandler(error))
-		// );
 	}
 
 	/**
 	 * *Handling error based on response codes
 	 * @param http event response
-	 * @date 04 Apr 2021
-	 * @developer Rahul Kundu
+	 * @developer Anusmrity Dolai
 	 */
 	private errorHandler(error: HttpErrorResponse): Observable<HttpEvent<any>> {
 		const httpErrorCode: number = error['status'];
