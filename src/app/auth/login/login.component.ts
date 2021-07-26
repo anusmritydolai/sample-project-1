@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.form.value.email, this.form.value.password).subscribe((data: any) => {
         localStorage.setItem('user_info', JSON.stringify(data));
         localStorage.setItem('token', data.token);
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/']);
       }, error => {
         this.appService.openSnackBar(error.error.reason);
       })  
